@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Denise Mai Lofty CRM
 
-## Getting Started
+A custom Real Estate Automation CRM designed to synchronize with the Lofty API, providing a "Single Pane of Glass" experience for lead management, communication, and document handling.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Lofty Integration:** Full synchronization engine with the Lofty API for real-time lead data.
+- **Lead Management:** Comprehensive dashboard for tracking and managing real estate leads.
+- **AI Drafting:** Integrated AI capabilities for drafting communications and responses.
+- **Document Management:** Centralized handling of lead-related documents and files.
+- **Communication Timeline:** Enhanced visual timeline of all interactions with leads.
+- **Real-time Data:** Powered by Supabase for instant updates and persistence.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework:** [Next.js 16+](https://nextjs.org/) (App Router)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Backend/BaaS:** [Supabase](https://supabase.com/) (PostgreSQL, Auth, Storage, Edge Functions)
+- **Deployment:** [Vercel](https://vercel.com/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Getting Started
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js 20+
+- A Supabase account and project
+- A Lofty API key
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repo-url>
+   cd denise-mai-crm
+   ```
 
-## Deploy on Vercel
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Set up environment variables:**
+   Create a `.env.local` file in the root directory and add the following:
+   ```env
+   # Supabase Configuration
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   # Lofty API Configuration
+   LOFTY_API_KEY=your_lofty_api_key
+   LOFTY_API_BASE_URL=https://api.lofty.com
+   ```
+
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 🌐 Deployment
+
+### Frontend (Vercel)
+
+1. Push your code to GitHub.
+2. Import the project into Vercel.
+3. Add the environment variables listed above in the Vercel project settings.
+4. Deploy.
+
+### Backend (Supabase)
+
+1. Ensure your Supabase schema is applied.
+2. Configure Auth providers and Storage buckets as required by the application.
+
+## 📂 Project Structure
+
+- `src/app/`: Next.js App Router pages and layouts.
+- `src/components/`: Reusable UI components.
+- `src/services/`: Business logic and external API wrappers (Lofty, Supabase).
+- `src/lib/`: Shared configurations and client initializations.
+- `src/hooks/`: Custom React hooks.
+- `src/types/`: TypeScript domain entity definitions.
+- `src/utils/`: Pure utility functions.
+- `supabase/`: Database migrations and edge functions.
