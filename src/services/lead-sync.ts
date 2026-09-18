@@ -55,7 +55,16 @@ export class LeadSyncEngine {
       throw fetchError;
     }
 
-    const leadData = {
+    const leadData: {
+      lofty_lead_id: string;
+      first_name: string;
+      last_name: string;
+      email: string;
+      phone: string;
+      pipeline_stage: string;
+      updated_at: string;
+      assigned_agent_id?: string;
+    } = {
       lofty_lead_id: loftyLead.id,
       first_name: loftyLead.first_name,
       last_name: loftyLead.last_name,
