@@ -2,6 +2,7 @@ import React from 'react';
 import { NotesSection } from './notes-section';
 import { TasksSection } from './tasks-section';
 import { DocumentList } from './document-list';
+import { AIDraft } from './ai-draft';
 
 interface LeadDetailProps {
   lead: {
@@ -101,8 +102,11 @@ export function LeadDetail({ lead, communications }: LeadDetailProps) {
           </div>
         </div>
 
-        {/* Side Panel - Notes, Tasks & Documents */}
+        {/* Side Panel - AI, Notes, Tasks & Documents */}
         <div className="space-y-6">
+          <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+            <AIDraft leadId={lead.id} />
+          </div>
           <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
             <NotesSection leadId={lead.id} />
           </div>
