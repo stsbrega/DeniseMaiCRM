@@ -97,7 +97,7 @@ export function AIDraft({ leadId }: AIDraftProps) {
           >
             {isSending ? 'Sending...' : 'Send Message'}
           </button>
-        </div}
+        </div>
       </div>
     </div>
   );
